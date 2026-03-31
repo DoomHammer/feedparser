@@ -267,7 +267,7 @@ class FeedParserSensor(SensorEntity):
             if images:
                 # pick the first image found
                 return images[0]["url"]
-        elif "summary" in feed_entry:
+        if "summary" in feed_entry:
             images = re.findall(
                 IMAGE_REGEX,
                 feed_entry["summary"],
